@@ -28,7 +28,7 @@
               <tbody>
                     <tr>
                         <td align="center" scope="row">1</td>
-                        <td align="center">Penggaris</td>
+                        <td align="center">Gelas Ukur</td>
                         <td align="center">Alat Ukur</td>
                         <td align="center" >
                             <button type="button" class="btn btn-danger">Hapus</button>
