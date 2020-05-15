@@ -38,8 +38,8 @@ class tipe_lab extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'tipe_lab',
-					'label' => 'tipe_lab',
+					'field'	=> 'nama_lab',
+					'label' => 'nama_lab',
 					'rules' => 'required'
 				)
 			);
@@ -60,12 +60,18 @@ class tipe_lab extends CI_Controller {
 			$this->fungsi->catat($datapost,"Menambah Master tipe_lab dengan data sbb:",true);
 		}
 	}
+
 	public function show_editForm($id='')
 	{
 		$this->fungsi->check_previleges('tipe_lab');
 		$this->load->library('form_validation');
 		$config = array(
-			array(
+				array(
+					'field'	=> 'id',
+					'label' => 'wes mbarke',
+					'rules' => ''
+				),
+				array(
 					'field'	=> 'nama_lab',
 					'label' => 'nama_lab',
 					'rules' => 'required'
@@ -76,7 +82,7 @@ class tipe_lab extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['edit'] = $this->db->get_where('master_tipe_lab',array('id'=>$id));
+			$data['edit'] = $this->db->get_where('tipe_lab',array('id'=>$id));
 			$data['status']='';
 			$this->load->view('master/tipe_lab/v_tipe_lab_edit',$data);
 		}
@@ -85,9 +91,15 @@ class tipe_lab extends CI_Controller {
 			$datapost = get_post_data(array('id','kode','nama_lab','keterangan','id_status'));
 			$this->m_tipe_lab->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/tipe_lab","#content")');
-			$this->fungsi->message_box("Data Master Nama Laboratorium sukses diperbarui...","success");
+			$this->fungsi->message_box("Data Master Tipe Lab sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit Master tipe_lab dengan data sbb:",true);
 		}
+	}
+	public function delete()
+	{
+		$id = $this->uri->segment(4);
+		$this->m_tipe_lab->deleteData($id);
+		redirect('admin');
 	}
 }
 
