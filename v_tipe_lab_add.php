@@ -3,7 +3,7 @@
 <div class="box-body big">
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
-        
+
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Lab</label>
             <div class="col-sm-8">
