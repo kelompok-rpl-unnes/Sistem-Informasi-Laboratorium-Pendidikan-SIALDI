@@ -10,7 +10,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("master/nama_alat/form/base","#modal")','Add New Satuan','btn btn-success');
+                echo button('load_silent("master/satuan/form/base","#modal")','Add New Satuan','btn btn-success');
               } else {
                 # code...
               }
@@ -20,16 +20,17 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-                <th>No</th>
-                <th>Nama Alat</th>
+                <th>id</th>
+                <th>Nama</th>
                 <th>Keterangan</th>
                 <th>Act</th>
               </thead>
               <tbody>
                     <tr>
                         <td align="center" scope="row">1</td>
-                        <td align="center">Gelas Ukur</td>
-                        <td align="center">Alat Ukur</td>
+                        <td align="center">id</td>
+                        <td align="center">Nama</td>
+                        <td align="center">Keterangan</td>
                         <td align="center" >
                             <button type="button" class="btn btn-danger">Hapus</button>
                             <button type="button" class="btn btn-info">Edit</button>
@@ -47,4 +48,4 @@
       "ordering": false,
     } );
   });
-</script>
+</script> 
