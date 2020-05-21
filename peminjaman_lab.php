@@ -57,7 +57,7 @@ class peminjaman_lab extends CI_Controller {
 			$this->m_tipe_lab->insertData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/peminjaman_lab","#content")');
 			$this->fungsi->message_box("Data Peminjaman Laboratorium sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah eminjaman_lab dengan data sbb:",true);
+			$this->fungsi->catat($datapost,"Menambah peminjaman_lab dengan data sbb:",true);
 		}
 	}
 
