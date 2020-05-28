@@ -3,7 +3,15 @@
 <div class="box-body big">
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
-
+        
+        <div class="form-group">
+            <label class="col-sm-4 control-label">id alat bahan</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'id_alat_bahan','class'=>'form-control'));?>
+            <?php echo form_error('id_alat_bahan');?>
+            <span id="check_data"></span>
+            </div>
+        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Alat</label>
             <div class="col-sm-8">
@@ -30,10 +38,10 @@
         </div>
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">Simpan</label>
+            <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"master/tipe_lab/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"master/kategori_alat_bahan/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
             ?>
             </div>
         </div>
