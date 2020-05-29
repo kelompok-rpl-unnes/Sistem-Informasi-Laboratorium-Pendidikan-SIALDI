@@ -14,7 +14,7 @@ class pengajuan_alat extends CI_Controller {
 	{
 		$this->fungsi->check_previleges('pengajuan_alat');
 		$data['pengajuan_alat'] = $this->m_pengajuan_alat->getData();
-		$this->load->view('pengajuan/pengajuan_alat/v_pengajuan_alat_list',$data);
+		$this->load->view('pengajuan/v_pengajuan_alat_list',$data);
 	}
 	
 	public function form($param='')
@@ -26,11 +26,7 @@ class pengajuan_alat extends CI_Controller {
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
 		if($param=='base'){
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_alat/show_addForm/","#divsubcontent")');	
-        }
-        if($param=='base1'){
-			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_alat/show_viewForm/","#divsubcontent")');	
-		}
-        else{
+		}else{
 			$base_kom=$this->uri->segment(5);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_alat/show_editForm/'.$base_kom.'","#divsubcontent")');	
 		}
@@ -42,23 +38,8 @@ class pengajuan_alat extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'id',
-					'label' => 'id',
-					'rules' => 'required'
-                ),
-                array(
-					'field'	=> 'nama_lab',
-					'label' => 'nama_lab',
-					'rules' => 'required'
-                ),
-                array(
-					'field'	=> 'nama_alat',
-					'label' => 'nama_alat',
-					'rules' => 'required'
-                ),
-                array(
-					'field'	=> 'tipe',
-					'label' => 'tipe',
+					'field'	=> 'nama_pengaju',
+					'label' => 'nama_pengaju',
 					'rules' => 'required'
 				)
 			);
@@ -68,15 +49,15 @@ class pengajuan_alat extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
-			$this->load->view('pengajuan/pengajuan_alat/v_pengajuan_alat_add',$data);
+			$this->load->view('pengajuan/v_pengajuan_alat_add',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_lab','nama_alat','merk','tipe','jumlah','harga','status'));
+			$datapost = get_post_data(array('id','nama_alat','jumlah','tgl_pengajuan','nama_pengaju'));
 			$this->m_pengajuan_alat->insertData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_alat","#content")');
-			$this->fungsi->message_box("Data Pengajuan Pengajuan Alat sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah Pengajuan pengajuan_alat dengan data sbb:",true);
+			$this->fungsi->message_box("Data Pengajuan Alat sukses disimpan...","success");
+			$this->fungsi->catat($datapost,"Menambah pengajuan_alat dengan data sbb:",true);
 		}
 	}
 
@@ -85,26 +66,16 @@ class pengajuan_alat extends CI_Controller {
 		$this->fungsi->check_previleges('pengajuan_alat');
 		$this->load->library('form_validation');
 		$config = array(
-            array(
-                'field'	=> 'id',
-                'label' => 'id',
-                'rules' => 'required'
-            ),
-            array(
-                'field'	=> 'nama_lab',
-                'label' => 'nama_lab',
-                'rules' => 'required'
-            ),
-            array(
-                'field'	=> 'nama_alat',
-                'label' => 'nama_alat',
-                'rules' => 'required'
-            ),
-            array(
-                'field'	=> 'tipe',
-                'label' => 'tipe',
-                'rules' => 'required'
-            )
+				array(
+					'field'	=> 'id',
+                    'label' => 'id',
+					'rules' => ''
+				),
+				array(
+					'field'	=> 'nama_pengaju',
+					'label' => 'nama_pengaju',
+					'rules' => 'required'
+				)
 			);
 		$this->form_validation->set_rules($config);
 		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
@@ -113,15 +84,15 @@ class pengajuan_alat extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('pengajuan_alat',array('id'=>$id));
 			$data['status']='';
-			$this->load->view('pengajuan/pengajuan_alat/v_pengajuan_alat_edit',$data);
+			$this->load->view('pengajuan/v_pengajuan_alat_edit',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_lab','nama_alat','merk','tipe','jumlah','harga','status'));
+			$datapost = get_post_data(array('id','nama_alat','tgl_pengajuan','jumlah','nama_pengaju'));
 			$this->m_pengajuan_alat->updateData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_alat","#content")');
-			$this->fungsi->message_box("Data Pengajuan Pengajuan Alat sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit Pengajuan pengajuan_alat dengan data sbb:",true);
+			$this->fungsi->message_box("Data Pengajuan Alat sukses diperbarui...","success");
+			$this->fungsi->catat($datapost,"Mengedit pengajuan_alat dengan data sbb:",true);
 		}
 	}
 	public function delete()
@@ -129,17 +100,8 @@ class pengajuan_alat extends CI_Controller {
 		$id = $this->uri->segment(4);
 		$this->m_pengajuan_alat->deleteData($id);
 		redirect('admin');
-    }
-    public function show_viewform()
-    {
-        $this->fungsi->check_previleges('pengajuan_alat');
-        $this->load->library('form_validation');
-        $this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
-        $data['view'] = $this->db->get_where('pengajuan_alat',array('id'=>$id));
-		$this->load->view('pengajuan/pengajuan_alat/v_pengajuan_alat_view',$data);
-
-    }
+	}
 }
 
-/* End of file pengajuan_alat.php */
-/* Location: ./application/controllers/pengajuan/pengajuan_alat.php */
+/* End of file tipe_lab.php */
+/* Location: ./application/controllers/master/tipe_lab.php */
