@@ -75,7 +75,6 @@ class Auth {
                 'username'          => $query->row()->username,
                 'nama'              => $query->row()->nama,
                 'level'             => $query->row()->level,
-                'kode_aplikator'    => $query->row()->kode_aplikator,
                 'bagian'            => $query->row()->bagian,
                 'gambar'            => $query->row()->gambar,
                 'nama_level'        => $query->row()->nama_level,
