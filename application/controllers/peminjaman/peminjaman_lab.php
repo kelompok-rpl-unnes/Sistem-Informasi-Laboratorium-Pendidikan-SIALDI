@@ -14,7 +14,7 @@ class peminjaman_lab extends CI_Controller {
 	{
 		$this->fungsi->check_previleges('peminjaman_lab');
 		$data['peminjaman_lab'] = $this->m_peminjaman_lab->getData();
-		$this->load->view('peminjaman/peminjaman_lab/v_peminjaman_lab_list',$data);
+		$this->load->view('peminjaman/v_peminjaman_lab_list',$data);
 	}
 	
 	public function form($param='')
@@ -49,7 +49,7 @@ class peminjaman_lab extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
-			$this->load->view('peminjaman/peminjaman_lab/v_peminjaman_lab_add',$data);
+			$this->load->view('peminjaman/v_peminjaman_lab_add',$data);
 		}
 		else
 		{
@@ -84,7 +84,7 @@ class peminjaman_lab extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('tipe_lab',array('id'=>$id));
 			$data['status']='';
-			$this->load->view('peminjaman/peminjaman_lab/v_peminjaman_lab_edit',$data);
+			$this->load->view('peminjaman/v_peminjaman_lab_edit',$data);
 		}
 		else
 		{
