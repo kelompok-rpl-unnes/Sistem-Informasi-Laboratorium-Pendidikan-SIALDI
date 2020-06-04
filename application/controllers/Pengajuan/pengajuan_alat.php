@@ -103,5 +103,5 @@ class pengajuan_alat extends CI_Controller {
 	}
 }
 
-/* End of file tipe_lab.php */
-/* Location: ./application/controllers/master/tipe_lab.php */
+/* End of file pengajuan_alat.php */
+/* Location: ./application/controllers/pengajuan/pengajuan_alat.php */

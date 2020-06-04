@@ -53,6 +53,7 @@
           # code...
         }
         ?>
+        <a href="<?= site_url('pengajuan/pengajuan_alat/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin ingin Menghapus Pengajuan Alat?')"><i class="fa fa-trash"></i></a>
       </td>
     </tr>
 
