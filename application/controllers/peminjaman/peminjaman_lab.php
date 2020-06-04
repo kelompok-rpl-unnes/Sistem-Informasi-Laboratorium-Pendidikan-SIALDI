@@ -13,7 +13,7 @@ class peminjaman_lab extends CI_Controller {
 	public function index()
 	{
 		$this->fungsi->check_previleges('peminjaman_lab');
-		$data['peminjaman_lab'] = $this->m_tipe_lab->getData();
+		$data['peminjaman_lab'] = $this->m_peminjaman_lab->getData();
 		$this->load->view('peminjaman/peminjaman_lab/v_peminjaman_lab_list',$data);
 	}
 	
@@ -53,8 +53,8 @@ class peminjaman_lab extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id_pinjam','nama_peminjam','tgl_pinjam','tgl_selesai','status_pinjam'));
-			$this->m_tipe_lab->insertData($datapost);
+			$datapost = get_post_data(array('id','nama_peminjam','tgl_pinjam','tgl_selesai','status_pinjam'));
+			$this->m_peminjaman_lab->insertData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/peminjaman_lab","#content")');
 			$this->fungsi->message_box("Data Peminjaman Laboratorium sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah peminjaman_lab dengan data sbb:",true);
@@ -63,11 +63,11 @@ class peminjaman_lab extends CI_Controller {
 
 	public function show_editForm($id='')
 	{
-		$this->fungsi->check_previleges('tipe_lab');
+		$this->fungsi->check_previleges('peminjaman_lab');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'id_pinjam',
+					'field'	=> 'id',
 					'label' => 'wes mbarke',
 					'rules' => ''
 				),
@@ -88,8 +88,8 @@ class peminjaman_lab extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id_pinjam','nama_peminjam','tgl_pinjam','tgl_selesai','status_pinjam'));
-			$this->m_tipe_lab->updateData($datapost);
+			$datapost = get_post_data(array('id','nama_peminjam','tgl_pinjam','tgl_selesai','status_pinjam'));
+			$this->m_peminjaman_lab->updateData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/peminjaman_lab","#content")');
 			$this->fungsi->message_box("Data Peminjaman Laboratorium sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit peminjaman_lab dengan data sbb:",true);
@@ -98,10 +98,10 @@ class peminjaman_lab extends CI_Controller {
 	public function delete()
 	{
 		$id = $this->uri->segment(4);
-		$this->m_tipe_lab->deleteData($id);
+		$this->m_peminjaman_lab->deleteData($id);
 		redirect('admin');
 	}
 }
 
-/* End of file tipe_lab.php */
-/* Location: ./application/controllers/master/tipe_lab.php */
+/* End of file peminjaman_lab.php */
+/* Location: ./application/controllers/peminjaman/peminjaman_lab.php */
