@@ -38,8 +38,8 @@ class pengajuan_alat extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'nama_pengaju',
-					'label' => 'nama_pengaju',
+					'field'	=> 'nama_lab',
+					'label' => 'nama_lab',
 					'rules' => 'required'
 				)
 			);
@@ -49,11 +49,11 @@ class pengajuan_alat extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
-			$this->load->view('pengajuan/v_pengajuan_alat_add',$data);
+			$this->load->view('pengajuan/pengajuan_alat/v_pengajuan_alat_add',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_alat','jumlah','tgl_pengajuan','nama_pengaju'));
+			$datapost = get_post_data(array('id','nama_lab','nama_alat','merk','tipe','jumlah','Harga','status'));
 			$this->m_pengajuan_alat->insertData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_alat","#content")');
 			$this->fungsi->message_box("Data Pengajuan Alat sukses disimpan...","success");
@@ -72,8 +72,8 @@ class pengajuan_alat extends CI_Controller {
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'nama_pengaju',
-					'label' => 'nama_pengaju',
+					'field'	=> 'nama_lab',
+					'label' => 'nama_lab',
 					'rules' => 'required'
 				)
 			);
@@ -84,11 +84,11 @@ class pengajuan_alat extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('pengajuan_alat',array('id'=>$id));
 			$data['status']='';
-			$this->load->view('pengajuan/v_pengajuan_alat_edit',$data);
+			$this->load->view('pengajuan/pengajuan_alat/v_pengajuan_alat_edit',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_alat','tgl_pengajuan','jumlah','nama_pengaju'));
+			$datapost = get_post_data(array('id','nama_lab','nama_alat','merk','tipe','jumlah','Harga','status'));
 			$this->m_pengajuan_alat->updateData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_alat","#content")');
 			$this->fungsi->message_box("Data Pengajuan Alat sukses diperbarui...","success");

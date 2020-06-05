@@ -42,6 +42,7 @@
           # code...
         }
         ?>
+        <a href="<?= site_url('master/tipe_lab/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin ingin Menghapus Satuan?')"><i class="fa fa-trash"></i></a>
       </td>
     </tr>
 

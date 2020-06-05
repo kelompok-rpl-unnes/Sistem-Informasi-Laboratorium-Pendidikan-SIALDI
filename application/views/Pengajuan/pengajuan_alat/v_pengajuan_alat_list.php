@@ -9,7 +9,7 @@
       <?php
         $sesi = from_session('level');
         if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-          echo button('load_silent("pengajuan/pengajuan_alat/form/base","#modal")','Add New Pengajuan Alat','btn btn-success');
+          echo button('load_silent("pengajuan/pengajuan_alat/form/base","#modal")','Ajukan Alat','btn btn-success');
         } else {
           # code...
         }

@@ -13,6 +13,14 @@
             </div>
         </div>
         <div class="form-group">
+            <label class="col-sm-4 control-label">Nama Lab</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'nama_lab','class'=>'form-control'));?>
+            <?php echo form_error('nama_lab');?>
+            <span id="check_data"></span>
+            </div>
+        </div>
+        <div class="form-group">
             <label class="col-sm-4 control-label">Nama Alat</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'nama_alat','class'=>'form-control'));?>
@@ -21,10 +29,18 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Tanggal Pengajuan</label>
+            <label class="col-sm-4 control-label">Merk</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tgl_pengajuan','class'=>'form-control'));?>
-            <?php echo form_error('tgl_pengajuan');?>
+            <?php echo form_input(array('name'=>'merk','class'=>'form-control'));?>
+            <?php echo form_error('merk');?>
+            <span id="check_data"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Tipe</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'tipe','class'=>'form-control'));?>
+            <?php echo form_error('tipe');?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -37,10 +53,18 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Nama Pengaju</label>
+            <label class="col-sm-4 control-label">Harga</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_pengaju','class'=>'form-control'));?>
-            <?php echo form_error('nama_pengaju');?>
+            <?php echo form_input(array('name'=>'harga','class'=>'form-control'));?>
+            <?php echo form_error('harga');?>
+            <span id="check_data"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Status</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'status','class'=>'form-control'));?>
+            <?php echo form_error('status');?>
             <span id="check_data"></span>
             </div>
         </div>
