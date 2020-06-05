@@ -98,7 +98,7 @@ class Master_bahan extends CI_Controller {
 	public function delete()
 	{
 		$id = $this->uri->segment(4);
-		$this->m_master_bahan->deleteData($id);
+		$this->m_nama_bahan->deleteData($id);
 		redirect('admin');
 	}
 }
