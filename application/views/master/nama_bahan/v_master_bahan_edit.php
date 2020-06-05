@@ -36,13 +36,6 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Pengarang</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'pengarang','value'=>$row->pengarang,'class'=>'form-control'));?>
-            <?php echo form_error('pengarang');?>
-            </div>
-        </div>
-        <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">
             <?php
