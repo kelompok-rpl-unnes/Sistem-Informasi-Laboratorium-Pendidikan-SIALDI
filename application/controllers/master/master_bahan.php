@@ -7,14 +7,14 @@ class Master_bahan extends CI_Controller {
 	{
 		parent::__construct();
 		$this->fungsi->restrict();
-		$this->load->model('master/m_master_bahan');
+		$this->load->model('master/m_nama_bahan');
 	}
 
 	public function index()
 	{
 		$this->fungsi->check_previleges('nama_bahan');
-		$data['master_bahan'] = $this->m_master_bahan->getData();
-		$this->load->view('master/master_bahan/v_master_bahan_list',$data);
+		$data['master_bahan'] = $this->m_nama_bahan->getData();
+		$this->load->view('master/nama_bahan/v_master_bahan_list',$data);
 	}
 
 	public function form($param='')
@@ -49,13 +49,13 @@ class Master_bahan extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
-			$this->load->view('master/master_bahan/v_master_bahan_add',$data);
+			$this->load->view('master/nama_bahan/v_master_bahan_add',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('kode','jenis_bahan','nama_bahan','tahun','pengarang'));
+			$datapost = get_post_data(array('kode','jenis_bahan','nama_bahan','tahun'));
 			$this->m_master_bahan->insertData($datapost);
-			$this->fungsi->run_js('load_silent("master/master_bahan","#content")');
+			$this->fungsi->run_js('load_silent("master/nama_bahan","#content")');
 			$this->fungsi->message_box("Data Master Bahan sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah Master master_bahan dengan data sbb:",true);
 		}
@@ -84,11 +84,11 @@ class Master_bahan extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('master_bahan',array('id'=>$id));
 			$data['status']='';
-			$this->load->view('master/master_bahan/v_master_bahan_edit',$data);
+			$this->load->view('master/nama_bahan/v_master_bahan_edit',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','kode','jenis_bahan','nama_bahan','tahun','pengarang'));
+			$datapost = get_post_data(array('id','kode','jenis_bahan','nama_bahan','tahun'));
 			$this->m_master_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/master_bahan","#content")');
 			$this->fungsi->message_box("Data Master Bahan sukses diperbarui...","success");

@@ -25,7 +25,6 @@
                 <th>Jenis Bahan</th>
                 <th>Nama Bahan</th>
                 <th>Tahun</th>
-                <th>Pengarang</th>
                 <th>Act</th>
               </thead>
               <tbody>
@@ -38,7 +37,6 @@
             <td align="center"><?=$row->jenis_bahan?></td>
             <td align="center"><?=$row->nama_bahan?></td>
             <td align="center"><?=$row->tahun?></td>
-            <td align="center"><?=$row->pengarang?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');
