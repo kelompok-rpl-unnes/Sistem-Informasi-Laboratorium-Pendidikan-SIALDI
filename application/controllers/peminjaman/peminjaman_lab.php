@@ -82,7 +82,7 @@ class peminjaman_lab extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['edit'] = $this->db->get_where('tipe_lab',array('id'=>$id));
+			$data['edit'] = $this->db->get_where('peminjaman_lab',array('id'=>$id));
 			$data['status']='';
 			$this->load->view('peminjaman/v_peminjaman_lab_edit',$data);
 		}

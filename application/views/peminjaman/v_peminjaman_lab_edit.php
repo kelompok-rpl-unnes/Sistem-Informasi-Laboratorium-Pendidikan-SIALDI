@@ -10,8 +10,8 @@
             <label class="col-sm-4 control-label">Id Pinjam</label>
             <div class="col-sm-8">
             <?php echo form_hidden('id',$row->id); ?>
-            <?php echo form_input(array('name'=>'id_pinjam','value'=>$row->id_pinjam,'class'=>'form-control'));?>
-            <?php echo form_error('id_pinjam');?>
+            <?php echo form_input(array('name'=>'id','value'=>$row->id,'class'=>'form-control'));?>
+            <?php echo form_error('id');?>
             </div>
         </div>
         <div class="form-group">
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Tanggal Peminjam</label>
+            <label class="col-sm-4 control-label">Tanggal Pinjam</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'tgl_pinjam','value'=>$row->tgl_pinjam,'class'=>'form-control'));?>
             <?php echo form_error('tgl_pinjam');?>
