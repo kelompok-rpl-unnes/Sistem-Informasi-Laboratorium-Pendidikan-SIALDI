@@ -11,7 +11,7 @@
             <div class="col-sm-8">
             <?php echo form_hidden('id',$row->id); ?>
             <?php echo form_input(array('name'=>'kode','value'=>$row->kode,'class'=>'form-control'));?>
-            <?php echo form_error('no_induk');?>
+            <?php echo form_error('kode');?>
             </div>
         </div>
         <div class="form-group">
@@ -39,7 +39,7 @@
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"master/kategori_no_induk/show_editForm/","#divsubcontent")','Simpan','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"master/kelola_alat_bahan/show_editForm/","#divsubcontent")','Simpan','btn btn-success')." ";
             ?>
             </div>
         </div>

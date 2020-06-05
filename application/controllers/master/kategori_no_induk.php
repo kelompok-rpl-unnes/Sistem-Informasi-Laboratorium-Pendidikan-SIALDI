@@ -89,7 +89,7 @@ class Kategori_no_induk extends CI_Controller {
 		else
 		{
 			$datapost = get_post_data(array('id','no_induk','nama_mahasiswa','kategori_no_induk','id_status'));
-			$this->m_nama_alat->updateData($datapost);
+			$this->m_kategori_no_induk->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/kategori_no_induk","#content")');
 			$this->fungsi->message_box("Data Master Nama Alat sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit Master kategori_no_induk dengan data sbb:",true);

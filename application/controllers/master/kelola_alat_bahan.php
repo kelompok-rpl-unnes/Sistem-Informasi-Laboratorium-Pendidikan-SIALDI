@@ -54,7 +54,7 @@ class Kelola_alat_bahan extends CI_Controller {
 		else
 		{
 			$datapost = get_post_data(array('kode','nama_alat_dan_bahan','kelola_alat_bahan','keterangan','id_status'));
-			$this->m_kategori_no_induk->insertData($datapost);
+			$this->m_kelola_alat_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/kelola_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Master Kelola Alat Bahan sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah Master kelola_alat_bahan dengan data sbb:",true);
@@ -89,7 +89,7 @@ class Kelola_alat_bahan extends CI_Controller {
 		else
 		{
 			$datapost = get_post_data(array('id','kode','nama_alat_dan_bahan','kelola_alat_bahan','keterangan','id_status'));
-			$this->m_nama_alat->updateData($datapost);
+			$this->m_kelola_alat_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/kelola_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Master Kelola Alat Bahan sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit Master kelola_alat_bahan dengan data sbb:",true);

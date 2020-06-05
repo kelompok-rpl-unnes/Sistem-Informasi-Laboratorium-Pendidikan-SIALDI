@@ -54,7 +54,7 @@ class Kategori_alat_bahan extends CI_Controller {
 		else
 		{
 			$datapost = get_post_data(array('id_alat_bahan','nama_alat','nama_bahan','kategori'));
-			$this->m_kategori_no_induk->insertData($datapost);
+			$this->m_kategori_alat_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/kategori_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Master Kategori Alat Bahan sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah Master kategori_alat_bahan dengan data sbb:",true);
@@ -89,7 +89,7 @@ class Kategori_alat_bahan extends CI_Controller {
 		else
 		{
 			$datapost = get_post_data(array('id','id_alat_bahan','nama_alat','nama_bahan','kategori'));
-			$this->m_nama_alat->updateData($datapost);
+			$this->m_kategori_alat_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/kategori_alat_bahan","#content")');
 			$this->fungsi->message_box("Data Master kategori alat bahan sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit Master kategori_alat_bahan dengan data sbb:",true);
