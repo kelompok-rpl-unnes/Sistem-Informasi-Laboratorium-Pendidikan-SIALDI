@@ -23,8 +23,8 @@
           <th>Id Pinjam</th>
           <th>Nama Peminjam</th>
           <th>Tanggal Pinjam</th>
-                  <th>Tanggal Selesai</th>
-                  <th>Status Pinjam</th>
+          <th>Tanggal Selesai</th>
+          <th>Status Pinjam</th>
           <th>Act</th>
         </thead>
         <tbody>
@@ -33,11 +33,11 @@
     foreach($peminjaman_lab->result() as $row): ?>
     <tr>
       <td align="center"><?=$i++?></td>
-      <td align="center"><?=$row->id_pinjam?></td>
+      <td align="center"><?=$row->id?></td>
       <td align="center"><?=$row->nama_peminjam?></td>
       <td align="center"><?=$row->tgl_pinjam?></td>
       <td align="center"><?=$row->tgl_selesai?></td>
-      <td align="center"><?=$row->satus_pinjam?></td>
+      <td align="center"><?=$row->status_pinjam?></td>
       <td align="center">
       <?php
         $sesi = from_session('level');
@@ -47,6 +47,7 @@
           # code...
         }
         ?>
+        <a href="<?= site_url('peminjaman/peminjaman_lab/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin ingin Menghapus Daftar Peminjaman Laboratorium?')"><i class="fa fa-trash"></i></a>
       </td>
     </tr>
 
