@@ -4,13 +4,13 @@
       <div class="col-lg-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Master Kelola Alat Bahan</h3>
+            <h3 class="box-title">kelola Kelola Alat Bahan</h3>
 
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("master/kelola_alat_bahan/form/base","#modal")','Add New Kelola Alat dan Bahan','btn btn-success');
+                echo button('load_silent("kelola/kelola_alat_bahan/form/base","#modal")','Add New Kelola Alat dan Bahan','btn btn-success');
               } else {
                 # code...
               }
@@ -20,10 +20,11 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
+                <th>No</th>
                 <th>Kode</th>
                 <th>Nama Alat dan Bahan</th>
-                <th>Kelola Alat Bahan</th>
-                <th>Keterangan</th>
+                <th>Jumlah</th>
+                <th>Kondisi</th>
                 <th>Act</th>
               </thead>
               <tbody>
@@ -34,13 +35,13 @@
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->kode?></td>
             <td align="center"><?=$row->nama_alat_dan_bahan?></td>
-            <td align="center"><?=$row->kelola_alat_bahan?></td>
-            <td align="center"><?=$row->keterangan?></td>
+            <td align="center"><?=$row->jumlah?></td>
+            <td align="center"><?=$row->kondisi?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("master/kelola_alat_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("kelola/kelola_alat_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...
               }

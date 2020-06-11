@@ -21,18 +21,18 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Kelola Alat Bahan</label>
+            <label class="col-sm-4 control-label">Jumlah</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'kelola_alat_bahan','class'=>'form-control'));?>
-            <?php echo form_error('kelola_alat_bahan');?>
+            <?php echo form_input(array('name'=>'jumlah','class'=>'form-control'));?>
+            <?php echo form_error('jumlah');?>
             <span id="check_data"></span>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Keterangan</label>
+            <label class="col-sm-4 control-label">Kondisi</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'keterangan','class'=>'form-control'));?>
-            <?php echo form_error('keterangan');?>
+            <?php echo form_input(array('name'=>'kondisi','class'=>'form-control'));?>
+            <?php echo form_error('kondisi');?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -41,7 +41,7 @@
             <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"master/kelola_alat_bahan/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"kelola/kelola_alat_bahan/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
             ?>
             </div>
         </div>

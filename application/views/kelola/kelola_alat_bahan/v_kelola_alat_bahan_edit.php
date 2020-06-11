@@ -22,24 +22,24 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Kelola Alat Bahan</label>
+            <label class="col-sm-4 control-label">Jumlah</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'kelola_alat_bahan','value'=>$row->kelola_alat_bahan,'class'=>'form-control'));?>
-            <?php echo form_error('kelola_alat_bahan');?>
+            <?php echo form_input(array('name'=>'jumlah','value'=>$row->jumlah,'class'=>'form-control'));?>
+            <?php echo form_error('jumlah');?>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Keterangan</label>
+            <label class="col-sm-4 control-label">Kondisi</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'keterangan','value'=>$row->keterangan,'class'=>'form-control'));?>
-            <?php echo form_error('keterangan');?>
+            <?php echo form_input(array('name'=>'kondisi','value'=>$row->kondisi,'class'=>'form-control'));?>
+            <?php echo form_error('kondisi');?>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"master/kelola_alat_bahan/show_editForm/","#divsubcontent")','Simpan','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"kelola/kelola_alat_bahan/show_editForm/","#divsubcontent")','Simpan','btn btn-success')." ";
             ?>
             </div>
         </div>
