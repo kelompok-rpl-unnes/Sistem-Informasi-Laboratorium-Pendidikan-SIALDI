@@ -82,7 +82,7 @@ class kelola_alat_bahan extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['edit'] = $this->db->get_where('kelola_kelola_alat_bahan',array('id'=>$id));
+			$data['edit'] = $this->db->get_where('kelola_alat_bahan',array('id'=>$id));
 			$data['status']='';
 			$this->load->view('kelola/kelola_alat_bahan/v_kelola_alat_bahan_edit',$data);
 		}

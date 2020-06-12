@@ -7,11 +7,11 @@
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">Kode</label>
+            <label class="col-sm-4 control-label">Id</label>
             <div class="col-sm-8">
             <?php echo form_hidden('id',$row->id); ?>
-            <?php echo form_input(array('name'=>'kode','value'=>$row->kode,'class'=>'form-control'));?>
-            <?php echo form_error('kode');?>
+            <?php echo form_input(array('name'=>'id','value'=>$row->id,'class'=>'form-control'));?>
+            <?php echo form_error('id');?>
             </div>
         </div>
         <div class="form-group">
