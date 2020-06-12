@@ -34,7 +34,7 @@
             <?php echo form_input(array('name'=>'kondisi','value'=>$row->kondisi,'class'=>'form-control'));?>
             <?php echo form_error('kondisi');?>
             </div>
-        </div>
+            </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">

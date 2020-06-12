@@ -5,7 +5,7 @@ class m_kelola_alat_bahan extends CI_Model {
 
 	public function getData($value='')
 	{
-		$this->db->from('kelola_kelola_alat_bahan');
+		$this->db->from('kelola_alat_bahan');
 		
 		return $this->db->get();
 	}
@@ -13,20 +13,20 @@ class m_kelola_alat_bahan extends CI_Model {
 	public function insertData($data='')
 	{
 		
-        $this->db->insert('kelola_kelola_alat_bahan',$data);
+        $this->db->insert('kelola_alat_bahan',$data);
        
 	}
 
 	public function updateData($data='')
 	{
 		 $this->db->where('id',$data['id']);
-            $this->db->update('kelola_kelola_alat_bahan',$data);
+            $this->db->update('kelola_alat_bahan',$data);
 	}
 
 	public function deleteData($id='')
 	{
 		$this->db->where('id', $id);
-        $this->db->delete('kelola_kelola_alat_bahan');
+        $this->db->delete('kelola_alat_bahan');
 	}
 
 }

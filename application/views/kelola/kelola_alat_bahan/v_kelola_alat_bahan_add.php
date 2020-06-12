@@ -38,7 +38,7 @@
         </div>
 
         <div class="form-group">
-            <label class="col-sm-4 control-label">Save</label>
+            <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">
             <?php
             echo button('send_form(document.faddmenugrup,"kelola/kelola_alat_bahan/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
