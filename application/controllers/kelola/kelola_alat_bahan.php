@@ -53,7 +53,7 @@ class Kelola_alat_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('kode','nama_alat_dan_bahan','jumlah','kondisi','id_status'));
+			$datapost = get_post_data(array('Kode','Nama_Alat_dan_Bahan','Jumlah','Kondisi','id_status'));
 			$this->m_kelola_alat_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("kelola/kelola_alat_bahan","#content")');
 			$this->fungsi->message_box("Data kelola Kelola Alat Bahan sukses disimpan...","success");
@@ -88,7 +88,7 @@ class Kelola_alat_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('no','kode','nama_alat_dan_bahan','jumlah','kondisi','id_status'));
+			$datapost = get_post_data(array('No','Kode','Nama_Alat_dan_Bahan','Jumlah','Kondisi','id_status'));
 			$this->m_kelola_alat_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("kelola/kelola_alat_bahan","#content")');
 			$this->fungsi->message_box("Data kelola Kelola Alat Bahan sukses diperbarui...","success");

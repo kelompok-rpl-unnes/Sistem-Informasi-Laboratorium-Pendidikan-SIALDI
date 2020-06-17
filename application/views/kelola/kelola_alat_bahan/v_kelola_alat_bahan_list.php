@@ -22,7 +22,7 @@
               <thead>
                 <th>No</th>
                 <th>Kode</th>
-                <th>Nama Alat dan Bahan</th>
+                <th>Nama Alat Dan Bahan</th>
                 <th>Jumlah</th>
                 <th>Kondisi</th>
                 <th>Act</th>
@@ -33,15 +33,16 @@
           foreach($kelola_alat_bahan->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
-            <td align="center"><?=$row->kode?></td>
-            <td align="center"><?=$row->nama_alat_dan_bahan?></td>
-            <td align="center"><?=$row->jumlah?></td>
-            <td align="center"><?=$row->kondisi?></td>
+            <td align="center"><?=$row->Kode?></td>
+            <td align="center"><?=$row->Nama_Alat_Dan_Bahan?></td>
+            <td align="center"><?=$row->Jumlah?></td>
+            <td align="center"><?=$row->Kondisi?></td>
             <td align="center">
             <?php
-              $sesi = from_session('level');
+            $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
                 echo button('load_silent("kelola/kelola_alat_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("kelola/kelola_alat_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
               }
