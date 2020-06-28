@@ -5,26 +5,18 @@
         
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">id alat bahan</label>
+            <label class="col-sm-4 control-label">Id</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'id_alat_bahan','class'=>'form-control'));?>
-            <?php echo form_error('id_alat_bahan');?>
+            <?php echo form_input(array('name'=>'id','class'=>'form-control'));?>
+            <?php echo form_error('id');?>
             <span id="check_data"></span>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Nama Alat</label>
+            <label class="col-sm-4 control-label">Nama Alat dan Bahan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_alat','class'=>'form-control'));?>
-            <?php echo form_error('nama_alat');?>
-            <span id="check_data"></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Nama Bahan</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_bahan','class'=>'form-control'));?>
-            <?php echo form_error('nama_bahan');?>
+            <?php echo form_input(array('name'=>'nama_alat_dan_bahan','class'=>'form-control'));?>
+            <?php echo form_error('nama_alat_dan_bahan');?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -38,7 +30,7 @@
         </div>
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">Save</label>
+            <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">
             <?php
             echo button('send_form(document.faddmenugrup,"master/kategori_alat_bahan/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
