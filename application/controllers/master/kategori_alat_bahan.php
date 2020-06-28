@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Kategori_alat_bahan extends CI_Controller {
+class kategori_alat_bahan extends CI_Controller {
 
 	public function __construct()
 	{
@@ -68,12 +68,12 @@ class Kategori_alat_bahan extends CI_Controller {
 		$config = array(
 				array(
 					'field'	=> 'id',
-					'label' => 'kategori_alat_bahan',
+					'label' => 'id',
 					'rules' => 'required'
 				),
 				array(
-					'field'	=> 'id_alat_bahan',
-					'label' => 'kategori_alat_bahan',
+					'field'	=> 'nama_alat',
+					'label' => 'nama_alat',
 					'rules' => 'required'
 				)
 			);

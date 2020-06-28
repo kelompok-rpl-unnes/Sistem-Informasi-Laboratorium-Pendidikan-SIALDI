@@ -20,6 +20,7 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
+                <th>No</th>
                 <th>id alat bahan</th>
                 <th>Nama alat</th>
                 <th>Nama bahan</th>
@@ -44,7 +45,9 @@
               } else {
                 # code...
               }
-              ?>
+              
+           ?>
+           <a href="<?= site_url('master/kategori_alat_bahan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin ingin Menghapus Kelola Alat dan Bahan?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
 

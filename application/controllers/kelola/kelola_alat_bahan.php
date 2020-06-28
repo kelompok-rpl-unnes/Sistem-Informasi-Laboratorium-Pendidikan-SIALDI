@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Kelola_alat_bahan extends CI_Controller {
+class kelola_alat_bahan extends CI_Controller {
 
 	public function __construct()
 	{
@@ -20,7 +20,7 @@ class Kelola_alat_bahan extends CI_Controller {
 	public function form($param='')
 	{
 		$content   = "<div id='divsubcontent'></div>";
-		$header    = "Form kelola Kelola Alat Bahan";
+		$header    = "Kelola Alat Bahan";
 		$subheader = "kelola_alat_bahan";
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
@@ -38,8 +38,8 @@ class Kelola_alat_bahan extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'kelola_alat_bahan',
-					'label' => 'kelola_alat_bahan',
+					'field'	=> 'nama_alat_dan_bahan',
+					'label' => 'nama_alat_dan_bahan',
 					'rules' => 'required'
 				)
 			);
@@ -53,7 +53,7 @@ class Kelola_alat_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('Kode','Nama_Alat_dan_Bahan','Jumlah','Kondisi','id_status'));
+			$datapost = get_post_data(array('id','nama_alat_dan_bahan','jumlah','kondisi'));
 			$this->m_kelola_alat_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("kelola/kelola_alat_bahan","#content")');
 			$this->fungsi->message_box("Data kelola Kelola Alat Bahan sukses disimpan...","success");
@@ -68,12 +68,12 @@ class Kelola_alat_bahan extends CI_Controller {
 		$config = array(
 				array(
 					'field'	=> 'id',
-					'label' => 'kelola_alat_bahan',
+					'label' => 'id',
 					'rules' => 'required'
 				),
 				array(
-					'field'	=> 'kode',
-					'label' => 'kelola_alat_bahan',
+					'field'	=> 'nama_alat_dan_bahan',
+					'label' => 'nama_alat_dan_bahan',
 					'rules' => 'required'
 				)
 			);
@@ -82,19 +82,25 @@ class Kelola_alat_bahan extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['edit'] = $this->db->get_where('kelola_kelola_alat_bahan',array('id'=>$id));
+			$data['edit'] = $this->db->get_where('kelola_alat_bahan',array('id'=>$id));
 			$data['status']='';
 			$this->load->view('kelola/kelola_alat_bahan/v_kelola_alat_bahan_edit',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('No','Kode','Nama_Alat_dan_Bahan','Jumlah','Kondisi','id_status'));
+			$datapost = get_post_data(array('id','nama_alat_dan_bahan','jumlah','kondisi'));
 			$this->m_kelola_alat_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("kelola/kelola_alat_bahan","#content")');
-			$this->fungsi->message_box("Data kelola Kelola Alat Bahan sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit kelola kelola_alat_bahan dengan data sbb:",true);
+			$this->fungsi->message_box("Data Kelola Alat Bahan sukses diperbarui...","success");
+			$this->fungsi->catat($datapost,"Mengedit kelola_alat_bahan dengan data sbb:",true);
 		}
     }
+	public function delete()
+	{
+		$id = $this->uri->segment(4);
+		$this->m_kelola_alat_bahan->deleteData($id);
+		redirect('admin');
+	}
 }
 
 /* End of file kelola_alat_bahan.php */
