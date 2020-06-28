@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Kategori_no_induk extends CI_Controller {
+class kategori_no_induk extends CI_Controller {
 
 	public function __construct()
 	{
@@ -20,7 +20,7 @@ class Kategori_no_induk extends CI_Controller {
 	public function form($param='')
 	{
 		$content   = "<div id='divsubcontent'></div>";
-		$header    = "Form Master Kategori No Induk";
+		$header    = "Kategori No Induk";
 		$subheader = "kategori_no_induk";
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
@@ -38,8 +38,8 @@ class Kategori_no_induk extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'kategori_no_induk',
-					'label' => 'kategori_no_induk',
+					'field'	=> 'nama_mahasiswa',
+					'label' => 'nama_mahasiswa',
 					'rules' => 'required'
 				)
 			);
@@ -53,27 +53,27 @@ class Kategori_no_induk extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('no_induk','nama_mahasiswa','kategori_no_induk','id_status'));
+			$datapost = get_post_data(array('no_induk','nama_mahasiswa','angkatan','program_studi','kategori_no_induk'));
 			$this->m_kategori_no_induk->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/kategori_no_induk","#content")');
-			$this->fungsi->message_box("Data Master Kategori No Induk sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah Master kategori_no_induk dengan data sbb:",true);
+			$this->fungsi->message_box("Data master Kategori No Induk sukses disimpan...","success");
+			$this->fungsi->catat($datapost,"Menambah master kategori_no_induk dengan data sbb:",true);
 		}
 	}
 
-	public function show_editForm($id='')
+	public function show_editForm($no_induk='')
 	{
 		$this->fungsi->check_previleges('kategori_no_induk');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'id',
-					'label' => 'kategori_no_induk',
+					'field'	=> 'no_induk',
+					'label' => 'no_induk',
 					'rules' => 'required'
 				),
 				array(
-					'field'	=> 'no_induk',
-					'label' => 'kategori_no_induk',
+					'field'	=> 'nama_mahasiswa',
+					'label' => 'nama_mahasiswa',
 					'rules' => 'required'
 				)
 			);
@@ -82,19 +82,25 @@ class Kategori_no_induk extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['edit'] = $this->db->get_where('master_kategori_no_induk',array('id'=>$id));
+			$data['edit'] = $this->db->get_where('master_kategori_no_induk',array('no_induk'=>$no_induk));
 			$data['status']='';
 			$this->load->view('master/kategori_no_induk/v_kategori_no_induk_edit',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','no_induk','nama_mahasiswa','kategori_no_induk','id_status'));
+			$datapost = get_post_data(array('no_induk','nama_mahasiswa','angkatan','program_studi','kategori_no_induk'));
 			$this->m_kategori_no_induk->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/kategori_no_induk","#content")');
-			$this->fungsi->message_box("Data Master Nama Alat sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit Master kategori_no_induk dengan data sbb:",true);
+			$this->fungsi->message_box("Data Kategori No Induk sukses diperbarui...","success");
+			$this->fungsi->catat($datapost,"Mengedit kategori_no_induk dengan data sbb:",true);
 		}
     }
+	public function delete()
+	{
+		$id = $this->uri->segment(4);
+		$this->m_kategori_no_induk->deleteData($id);
+		redirect('admin');
+	}
 }
 
 /* End of file kategori_no_induk.php */

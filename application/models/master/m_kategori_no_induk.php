@@ -19,13 +19,13 @@ class m_kategori_no_induk extends CI_Model {
 
 	public function updateData($data='')
 	{
-		 $this->db->where('id',$data['id']);
+		 $this->db->where('no_induk',$data['no_induk']);
             $this->db->update('master_kategori_no_induk',$data);
 	}
 
-	public function deleteData($id='')
+	public function deleteData($no_induk='')
 	{
-		$this->db->where('id', $id);
+		$this->db->where('no_induk', $no_induk);
         $this->db->delete('master_kategori_no_induk');
 	}
 
