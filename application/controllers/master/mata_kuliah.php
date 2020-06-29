@@ -95,6 +95,12 @@ class Mata_kuliah extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit Master mata_kuliah dengan data sbb:",true);
 		}
 	}
+	public function delete()
+	{
+		$id = $this->uri->segment(4);
+		$this->m_mata_kuliah->deleteData($id);
+		redirect('admin');
+	}
 }
 
 /* End of file mata_kuliah.php */
