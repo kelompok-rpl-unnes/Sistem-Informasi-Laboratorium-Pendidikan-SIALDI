@@ -7,9 +7,9 @@
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">No induk</label>
+            <label class="col-sm-4 control-label">No Induk</label>
             <div class="col-sm-8">
-            <?php echo form_hidden('id',$row->id); ?>
+            <?php echo form_hidden('no_induk',$row->no_induk); ?>
             <?php echo form_input(array('name'=>'no_induk','value'=>$row->no_induk,'class'=>'form-control'));?>
             <?php echo form_error('no_induk');?>
             </div>
@@ -22,7 +22,21 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Kategori no induk</label>
+            <label class="col-sm-4 control-label">Angkatan</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'angkatan','value'=>$row->angkatan,'class'=>'form-control'));?>
+            <?php echo form_error('angkatan');?>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Program Studi</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'program_studi','value'=>$row->program_studi,'class'=>'form-control'));?>
+            <?php echo form_error('program_studi');?>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Kategori No Induk</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'kategori_no_induk','value'=>$row->kategori_no_induk,'class'=>'form-control'));?>
             <?php echo form_error('kategori_no_induk');?>
