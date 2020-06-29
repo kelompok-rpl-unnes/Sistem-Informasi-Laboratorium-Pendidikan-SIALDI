@@ -86,7 +86,7 @@ class peminjaman_lab extends CI_Controller {
 			$data['status']='';
 			$this->load->view('peminjaman/v_peminjaman_lab_edit',$data);
 		}
-		else
+		else 
 		{
 			$datapost = get_post_data(array('id','nama_peminjam','tgl_pinjam','tgl_selesai','status_pinjam'));
 			$this->m_peminjaman_lab->updateData($datapost);
