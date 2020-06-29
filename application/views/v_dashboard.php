@@ -32,4 +32,5 @@
             </div>
           </div>
           <!-- /.widget-user -->
+          <?php require ('application/views/kotak.php'); ?>
         </div>
