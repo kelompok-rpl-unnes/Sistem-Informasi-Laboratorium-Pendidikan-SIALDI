@@ -37,6 +37,11 @@ class peminjaman_lab extends CI_Controller {
 		$this->fungsi->check_previleges('peminjaman_lab');
 		$this->load->library('form_validation');
 		$config = array(
+				array (
+				'field'	=> 'id',
+				'label' => 'id',
+				'rules' => 'required'
+				),
 				array(
 					'field'	=> 'nama_peminjam',
 					'label' => 'nama_peminjam',
@@ -49,6 +54,13 @@ class peminjaman_lab extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
+			// Mendapatkan dan men-generate id periode
+            $kode = 'PL-' . date('d');
+            $kode_terakhir = $this->m_peminjaman_lab->getMax('peminjaman_lab', 'id', $kode);
+            $kode_tambah = substr($kode_terakhir, -4, 4);
+            $kode_tambah++;
+            $number = str_pad($kode_tambah, 4, '0', STR_PAD_LEFT);
+            $data['id'] = $kode . $number;
 			$this->load->view('peminjaman/v_peminjaman_lab_add',$data);
 		}
 		else

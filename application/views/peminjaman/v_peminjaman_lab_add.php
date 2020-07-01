@@ -5,10 +5,10 @@
         
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">Id Pinjam</label>
+            <label class="col-sm-4 control-label">ID Pinjam</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'id_pinjam','class'=>'form-control'));?>
-            <?php echo form_error('id_pinjam');?>
+            <input name="id" value="<?= $id; ?>" type="text" readonly="readonly" class="form-control">
+            <?php echo form_error('id');?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -23,7 +23,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Pinjam</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tgl_pinjam','class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'tgl_pinjam','type'=>'date','class'=>'form-control'));?>
             <?php echo form_error('tgl_pinjam');?>
             <span id="check_data"></span>
             </div>
@@ -31,7 +31,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Selesai</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tgl_selesai','class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'tgl_selesai','type'=>'date','class'=>'form-control'));?>
             <?php echo form_error('tgl_selesai');?>
             <span id="check_data"></span>
             </div>

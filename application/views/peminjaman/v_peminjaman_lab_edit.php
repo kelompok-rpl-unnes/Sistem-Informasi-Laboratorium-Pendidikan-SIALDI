@@ -7,10 +7,9 @@
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">Id Pinjam</label>
+            <label class="col-sm-4 control-label">ID Pinjam</label>
             <div class="col-sm-8">
-            <?php echo form_hidden('id',$row->id); ?>
-            <?php echo form_input(array('name'=>'id','value'=>$row->id,'class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'id','readonly'=>'readonly','value'=>$row->id,'class'=>'form-control'));?>
             <?php echo form_error('id');?>
             </div>
         </div>
@@ -31,7 +30,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Selesai</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tgl_selesai','value'=>$row->tgl_selesai,'class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'tgl_selesai','type'=>'date','value'=>$row->tgl_selesai,'class'=>'form-control'));?>
             <?php echo form_error('tgl_selesai');?>
             </div>
         </div>
