@@ -26,7 +26,7 @@
             <?php echo form_error('tgl_pengajuan');?>
             <span id="check_data"></span>
             </div>
-            
+
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Sumber Pendanaan</label>
@@ -37,14 +37,15 @@
             </div>
 
         </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Tgl Pendanaan Turun</label>
+        
+            <div class="form-group">
+            <label class="col-sm-4 control-label">Tgl. Pendanaan Turun</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tgl_pendanaan_turun','class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'tgl_pendanaan_turun','type'=>'date','class'=>'form-control'));?>
             <?php echo form_error('tgl_pendanaan_turun');?>
             <span id="check_data"></span>
             </div>
-
+            
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Pajak</label>

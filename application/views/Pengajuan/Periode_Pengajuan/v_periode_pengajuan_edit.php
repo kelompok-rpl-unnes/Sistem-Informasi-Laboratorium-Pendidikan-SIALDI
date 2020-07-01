@@ -37,13 +37,14 @@
             </div>
 
         </div>
-        <div class="form-group">
+            <div class="form-group">
             <label class="col-sm-4 control-label">Tgl. Pendanaan Turun</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tgl_pendanaan_turun','value'=>$row->tgl_pendanaan_turun,'class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'tgl_pendanaan_turun','type'=>'date','value'=>$row->tgl_pendanaan_turun,'class'=>'form-control'));?>
             <?php echo form_error('tgl_pendanaan_turun');?>
             </div>
-
+        </div>
+        
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Pajak</label>
