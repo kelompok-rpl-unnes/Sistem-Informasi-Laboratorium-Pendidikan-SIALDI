@@ -23,7 +23,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Pinjam</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tgl_pinjam','value'=>$row->tgl_pinjam,'class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'tgl_pinjam','type'=>'date','value'=>$row->tgl_pinjam,'class'=>'form-control'));?>
             <?php echo form_error('tgl_pinjam');?>
             </div>
         </div>
@@ -35,12 +35,12 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Status Pinjam</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'status_pinjam','value'=>$row->status_pinjam,'class'=>'form-control'));?>
-            <?php echo form_error('status_pinjam');?>
+                <label class="col-sm-2 control-label">Status Pinjam</label>
+                <div class="col-sm-8">
+                  <?php echo form_dropdown('status_pinjam',$status_pinjam,$row->status_pinjam,'id="status_pinjam" class="form-control select2"');?>
+                  <?php echo form_error('status_pinjam', '<span class="error-span">', '</span>'); ?>
+                </div>
             </div>
-        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">

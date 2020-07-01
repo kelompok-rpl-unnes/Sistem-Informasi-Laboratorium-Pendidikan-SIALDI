@@ -20,13 +20,14 @@
             <?php echo form_error('semester');?>
             </div>
         </div>
-        <div class="form-group">
+
+            <div class="form-group">
             <label class="col-sm-4 control-label">Tgl. Pengajuan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tgl_pengajuan','value'=>$row->tgl_pengajuan,'class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'tgl_pengajuan','type'=>'date','value'=>$row->tgl_pengajuan,'class'=>'form-control'));?>
             <?php echo form_error('tgl_pengajuan');?>
             </div>
-
+        </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Sumber Pendanaan</label>

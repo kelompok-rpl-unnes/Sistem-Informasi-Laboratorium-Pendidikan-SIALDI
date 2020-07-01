@@ -9,13 +9,18 @@ class M_peminjaman_lab extends CI_Model {
         $this->db->order_by('pl.id', 'desc');
         return $this->db->get();
     }
-
-    public function insertData($data='')
-    {
-        
-        $this->db->insert('peminjaman_lab',$data);
-       
-    }
+    public function insertData($data='',$new=true)
+	{
+		if($new)
+        {
+            $this->db->insert('peminjaman_lab',$data);
+        }
+        else
+        {
+            $this->db->where('id',$data['id']);
+            $this->db->update('peminjaman_lab',$data);
+        }
+	}
 
     public function updateData($data='')
     {

@@ -26,7 +26,7 @@
             <?php echo form_error('tgl_pengajuan');?>
             <span id="check_data"></span>
             </div>
-
+            
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Sumber Pendanaan</label>
