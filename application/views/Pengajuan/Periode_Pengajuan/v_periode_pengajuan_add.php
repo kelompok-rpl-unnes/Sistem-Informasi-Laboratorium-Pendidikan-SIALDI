@@ -6,7 +6,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Id</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'id','class'=>'form-control'));?>
+            <input name="id" value="<?= $id; ?>" type="text" readonly="readonly" class="form-control">
             <?php echo form_error('id');?>
             <span id="check_data"></span>
             </div>
@@ -22,7 +22,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tgl Pengajuan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tgl_pengajuan','class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'tgl_pengajuan','type'=>'date','class'=>'form-control'));?>
             <?php echo form_error('tgl_pengajuan');?>
             <span id="check_data"></span>
             </div>

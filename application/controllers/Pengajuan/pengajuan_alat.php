@@ -49,6 +49,13 @@ class pengajuan_alat extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
+			// Mendapatkan dan men-generate id peN
+            $kode = 'PA' . date('d');
+            $kode_terakhir = $this->m_pengajuan_alat->getMax('pengajuan_alat', 'id', $kode);
+            $kode_tambah = substr($kode_terakhir, -4, 4);
+            $kode_tambah++;
+            $number = str_pad($kode_tambah, 4, '0', STR_PAD_LEFT);
+            $data['id'] = $kode . $number;
 			$this->load->view('pengajuan/pengajuan_alat/v_pengajuan_alat_add',$data);
 		}
 		else

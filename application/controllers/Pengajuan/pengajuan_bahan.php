@@ -68,6 +68,13 @@ class pengajuan_bahan extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
+			// Mendapatkan dan men-generate id pengajuan bahan
+            $kode = 'PB-' . date('d');
+            $kode_terakhir = $this->m_pengajuan_bahan->getMax('pengajuan_bahan', 'id', $kode);
+            $kode_tambah = substr($kode_terakhir, -4, 4);
+            $kode_tambah++;
+            $number = str_pad($kode_tambah, 4, '0', STR_PAD_LEFT);
+            $data['id'] = $kode . $number;
 			$this->load->view('pengajuan/pengajuan_bahan/v_pengajuan_bahan_add',$data);
 		}
 		else

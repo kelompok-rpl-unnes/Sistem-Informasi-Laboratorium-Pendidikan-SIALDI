@@ -68,6 +68,13 @@ class periode_pengajuan extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
+			// Mendapatkan dan men-generate id periode pengajuan
+            $kode = 'PP-' . date('d');
+            $kode_terakhir = $this->m_periode_pengajuan->getMax('periode_pengajuan', 'id', $kode);
+            $kode_tambah = substr($kode_terakhir, -4, 4);
+            $kode_tambah++;
+            $number = str_pad($kode_tambah, 4, '0', STR_PAD_LEFT);
+            $data['id'] = $kode . $number;
 			$this->load->view('pengajuan/periode_pengajuan/v_periode_pengajuan_add',$data);
 		}
 		else
